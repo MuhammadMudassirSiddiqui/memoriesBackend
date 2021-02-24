@@ -21,13 +21,13 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "30mb" }));
 // });
 app.use(cors());
 
-const PORT = process.env.PORT || 4000;
-
 app.use("/posts", postRoute);
 
 app.get("/", (req, res) => {
   res.send("memories api");
 });
+
+const PORT = process.env.PORT || 4000;
 
 mongoose
   .connect(process.env.CONNECT_URL, {
